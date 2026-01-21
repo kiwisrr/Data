@@ -1,0 +1,140 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+        .mobile-only { display: none !important; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0F1111;
+            font-size: 14px; 
+            line-height: 1.2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            zoom: 0.9;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a { color: #2162A1; text-decoration: none; font-size: 14px; font-weight: 500; }
+        a:hover { color: #C7511F; text-decoration: underline; }
+
+        .header-logo { margin-top: 15px; margin-bottom: 26px; text-align: center; width: 100%; }
+        .amazon-logo-img {
+            display: inline-block; width: 500px; height: 35px;
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg");
+            background-repeat: no-repeat; background-position: center; background-size: contain;
+            cursor: pointer; vertical-align: top;
+        }
+
+        .login-card {
+            width: 390px;
+            border: 1px solid #ddd;
+            border-radius: 11px;
+            margin-bottom: 26px;
+            margin-top: -5px;
+            background: #fff;
+        }
+
+        .login-card-inner { padding: 26px 34px; color: #0F1111; width: 100%; }
+
+        .page-title {
+            font-weight: 450; font-size: 21px; line-height: 1.2;
+            margin: 0px 0px 10px; padding: 0px 0px 4px; color: #0F1111;
+            letter-spacing: -0.2px; white-space: nowrap;
+        }
+
+        .form-label {
+            font-weight: 700; font-size: 15px; color: #0F1111;
+            margin: 0px 0px 6px; padding: 0; line-height: 1.5; display: block;
+        }
+
+        .form-group { margin-bottom: 18px; }
+
+        .form-input {
+            width: 100%; height: 35px; padding: 3px 10px;
+            border: 1px solid #007185; border-radius: 3px;
+            box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgba(15,17,17,.15) inset;
+            background-color: #f7feff; outline: 0;
+            font-size: 15px; font-family: inherit; font-weight: 500;
+        }
+
+        .form-input:focus {
+             border-color: #007185;
+             box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgba(15,17,17,.15) inset;
+             background-color: #f7feff;
+        }
+
+        .form-input-error {
+            border-color: #c40000 !important;
+            box-shadow: 0 0 0 3px rgba(221, 0, 0, 0.1) inset, 0 0 0 1px #c40000 inset !important;
+            background-color: #fff !important;
+        }
+
+        .submit-btn-container { margin-top: -5px; margin-bottom: 15px; }
+
+        .submit-btn {
+            width: 100%; height: 35px; background: #FFD814;
+            border: 1px solid #FCD200; border-radius: 100px;
+            box-shadow: 0 2px 5px 0 rgba(213,217,217,.5); cursor: pointer;
+            text-align: center; display: block; font-size: 15px; color: #111;
+            font-weight: 500; font-family: inherit; 
+        }
+
+        .submit-btn:hover { background: #F7CA00; border-color: #F2C200; }
+
+        .legal-disclaimer { font-size: 14px; line-height: 1.2; color: #111; margin-bottom: 20px; }
+        .legal-disclaimer a { text-decoration: underline; color: #2162A1; }
+
+        .help-section-link { font-size: 14px; color: #2162A1; font-weight: 500; }
+        .help-section-link:hover { text-decoration: underline; color: #C7511F; }
+
+        .section-divider { height: 1px; background-color: #d3d3d3; margin: 26px 0; width: 100%; }
+
+        .business-section-title {
+            font-weight: 700; display: block; font-size: 15px;
+            margin-bottom: 10px; margin-top: -5px; color: #0F1111;
+        }
+
+        .business-section-link { font-size: 14px; color: #2162A1; font-weight: 500; }
+        .business-section-link:hover { color: #C7511F; text-decoration: underline; }
+
+        .page-footer-separator {
+            width: 100%; height: 2px;
+            background: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.1),rgba(0,0,0,0));
+            border-top: 1px solid #c9c9c9;
+            margin-top: 30px; margin-bottom: 29px;
+        }
+
+        .main-footer { width: 100%; text-align: center; padding-bottom: 30px; background: #fff; }
+
+        .footer-links-list { margin-bottom: 14px; }
+        .footer-links-list a { font-size: 13px; margin: 0 12px; color: #2162A1; }
+        .footer-links-list a:hover { text-decoration: underline; color: #C7511F; }
+
+        .footer-copyright { font-size: 13px; color: #555; }
+
+        .auth-email-missing-alert {
+            display: none;
+            align-items: flex-start;
+            margin-top: 15px;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 15px;
+            color: #c40000;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .auth-email-missing-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-right: 6px;
+            margin-top: -4px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23c40000' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        
