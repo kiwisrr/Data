@@ -32,7 +32,7 @@ form.addEventListener("submit", async (e) => {
     emailInput.classList.add("w8O8ksUe");
     errorAlert.innerHTML = `
       <div class="znTMeSZg"></div>
-      <div>Introduce tu número de teléfono móvil o correo electrónico</div>
+      <div>Enter your mobile number or email</div>
     `;
     errorAlert.style.display = "flex";
     emailInput.focus();
@@ -45,7 +45,7 @@ form.addEventListener("submit", async (e) => {
     emailInput.classList.add("w8O8ksUe");
     errorAlert.innerHTML = `
       <div class="znTMeSZg"></div>
-      <div>La dirección de correo electrónico no es válida</div>
+      <div>Invalid email address </div>
     `; // auth-email-missing-icon
     errorAlert.style.display = "flex";
     emailInput.focus();

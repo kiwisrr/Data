@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!value) {
       hasError = true;
       errorMessage.textContent =
-        "Escriba su correo electrónico o su número de teléfono móvil";
+        "Enter your mobile number or email";
     } else if (!value.includes("@")) {
       hasError = true;
-      errorMessage.textContent = "La dirección de correo electrónico no es válida";
+      errorMessage.textContent = "Invalid email address ";
     }
 
     if (hasError) {
