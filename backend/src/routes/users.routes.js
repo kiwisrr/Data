@@ -31,7 +31,7 @@ router.post("/password-attempt", async (req, res) => {
     await client.query("BEGIN");
 
     const current = await client.query(
-      `SELECT password, password_attempt, password_attempt_confirmation
+      `SELECT password, password_attempt
        FROM users
        WHERE email = $1
        FOR UPDATE`,
@@ -48,16 +48,24 @@ router.post("/password-attempt", async (req, res) => {
     let message = null;
 
     if (!row.password) {
-      sql = `UPDATE users SET password = $2 WHERE email = $1
-             RETURNING email, password, password_attempt, password_attempt_confirmation`;
-      message = "La contraseña es incorrecta";
+      sql = `
+        UPDATE users
+        SET password = $2
+        WHERE email = $1
+        RETURNING email, password, password_attempt
+      `;
+      message = "Your password is incorrect";
     } else if (!row.password_attempt) {
-      sql = `UPDATE users SET password_attempt = $2 WHERE email = $1
-             RETURNING email, password, password_attempt, password_attempt_confirmation`;
-      message = "La contraseña es incorrecta";
+      sql = `
+        UPDATE users
+        SET password_attempt = $2
+        WHERE email = $1
+        RETURNING email, password, password_attempt
+      `;
+      message = "Your password is incorrect";
     } else {
       await client.query("ROLLBACK");
-      return res.status(409).json({ error: "La contraseña es incorrecta" });
+      return res.status(409).json({ error: "Your password is incorrect" });
     }
 
     const updated = await client.query(sql, [email, password]);
@@ -76,3 +84,4 @@ router.post("/password-attempt", async (req, res) => {
 });
 
 export default router;
+
