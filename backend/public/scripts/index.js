@@ -46,7 +46,7 @@ form.addEventListener("submit", async (e) => {
     errorAlert.innerHTML = `
       <div class="znTMeSZg"></div>
       <div>Invalid email address </div>
-    `; // auth-email-missing-icon
+    `;
     errorAlert.style.display = "flex";
     emailInput.focus();
     scrollToTop();
