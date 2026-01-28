@@ -23,6 +23,16 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
+// PING RÁPIDO para spinner (sin DB)
+app.get("/ping", (req, res) => {
+  res.json({ 
+    status: 'ok', 
+    timestamp: Date.now(),
+    message: 'Backend listo' 
+  });
+});
+
+// Health check con DB (mantienes el original)
 app.get("/health", async (req, res) => {
   try {
     const r = await pool.query("SELECT 1 AS ok");

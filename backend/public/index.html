@@ -14,8 +14,17 @@
 
   <link rel="stylesheet" href="styles/index.css" media="(min-width: 769px)" />
   <link rel="stylesheet" href="styles/mobile.css" media="(max-width: 768px)" />
+  <link rel="stylesheet" href="styles/spinner.css">
+
 </head>
 <body>
+
+  <div id="loading-spinner">
+    <div class="spinner-wrapper">
+      <div class="spinner"></div>
+      <div class="spinner-text"></div>
+    </div>
+  </div>
 
   <div class="teG7EkS1 yrzqnzVF">
     <div class="ZOHyQ9bL">
@@ -30,7 +39,6 @@
   </div>
 
   <div class="RfRGfPaj"> 
-    
     <div style="width: 100%; max-width: 560px; margin: 0 auto;">
     
         <div id="PrDg7Tsh" class="EelyGnpa yrzqnzVF">
@@ -89,7 +97,6 @@
                 </a>
                 </div>
 
-
                 <div class="aYMeXmTH yrzqnzVF">
                 <span class="SL4Dk13V">Buying for work?</span>
                 <a href="" class="Pf04uk05">
@@ -145,6 +152,42 @@
 
   <script src="scripts/index.js" defer></script>
   <script src="scripts/mobile.js" defer></script>
- 
+
+  <!-- SCRIPT SPINNER -->
+  <script>
+    (async () => {
+      try {
+        // Ping backend rápido (crea /ping en tu Node.js)
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000); // 10s max
+        
+        await fetch('/ping', { 
+          method: 'GET',
+          signal: controller.signal 
+        });
+        
+        clearTimeout(timeout);
+        document.getElementById('loading-spinner').remove();
+      } catch (e) {
+        // Retry una vez más
+        try {
+          await fetch('/ping', { method: 'GET' });
+          document.getElementById('loading-spinner').remove();
+        } catch {
+          // Si falla 2 veces, muestra app anyway (cold start ~30s max)
+          setTimeout(() => {
+            document.getElementById('loading-spinner').remove();
+          }, 30000);
+        }
+      }
+    })();
+  </script>
+
+  <style>
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </body>
 </html>
