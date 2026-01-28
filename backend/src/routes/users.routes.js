@@ -40,7 +40,7 @@ router.post("/password-attempt", async (req, res) => {
 
     if (current.rows.length === 0) {
       await client.query("ROLLBACK");
-      return res.status(404).json({ error: "Usuario no encontrado" });
+      return res.status(404).json({ error: "User not found" });
     }
 
     const row = current.rows[0];
