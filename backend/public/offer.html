@@ -1,82 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Oferta exclusiva - 90% OFF</title>
 
-  <!-- Open Graph (WhatsApp/Facebook) -->
+  <link rel="canonical" href="https://secure-support-n222.onrender.com/offer" />
+  <meta name="description" content="Aprovecha esta oferta limitada. Solo por esta semana." />
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://secure-support-n222.onrender.com/offer" />
   <meta property="og:title" content="🔥 Oferta exclusiva - 90% OFF" />
   <meta property="og:description" content="Aprovecha esta oferta limitada. Solo por esta semana." />
 
-  <!-- Usa PNG/JPG accesible por HTTPS -->
-  <meta property="og:image" content="https://secure-support-n222.onrender.com/assets/offer.png" />
-  <meta property="og:image:secure_url" content="https://secure-support-n222.onrender.com/assets/offer.png" />
-  <meta property="og:image:type" content="image/png" />
-  <!-- Ajusta estos valores a los reales de tu imagen -->
+  <!-- IMPORTANTE: usa JPG o PNG, público, 200 OK -->
+  <meta property="og:image" content="https://secure-support-n222.onrender.com/assets/offer-1200x630.jpg" />
+  <meta property="og:image:secure_url" content="https://secure-support-n222.onrender.com/assets/offer-1200x630.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="🔥 Oferta exclusiva - 90% OFF" />
   <meta name="twitter:description" content="Aprovecha esta oferta limitada. Solo por esta semana." />
-  <meta name="twitter:image" content="https://secure-support-n222.onrender.com/assets/offer.png" />
-
-  <!-- Opcional: ayuda en algunos scrapers -->
-  <meta name="description" content="Aprovecha esta oferta limitada. Solo por esta semana." />
-  <link rel="canonical" href="https://secure-support-n222.onrender.com/offer" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-      background: #ffffff;
-      color: #232f3e;
-    }
-    .wrap {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      text-align: center;
-    }
-    .spinner {
-      width: 46px;
-      height: 46px;
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #ff9900;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 14px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .hint { font-size: 14px; opacity: .85; }
-  </style>
+  <meta name="twitter:image" content="https://secure-support-n222.onrender.com/assets/offer-1200x630.jpg" />
 </head>
-
 <body>
-  <!-- Contenido visible (humano). Los bots usan los meta OG de arriba. -->
-  <main class="wrap">
-    <div>
-      <div class="spinner"></div>
-      <div class="hint">Cargando oferta…</div>
-      <noscript class="hint">Activa JavaScript para continuar.</noscript>
-    </div>
-  </main>
-
-  <script>
-    // Para humanos: redirección normal. Los scrapers suelen NO ejecutar JS. [web:25]
-    (async () => {
-      try {
-        // opcional: “warm up”
-        await fetch("/ping", { cache: "no-store" });
-      } catch (_) {}
-      // Redirige a la página final
-      window.location.href = "/";
-    })();
-  </script>
+  <h1>Oferta exclusiva</h1>
+  <p>Si no te redirige automáticamente, abre: <a href="/go">Continuar</a></p>
 </body>
 </html>
