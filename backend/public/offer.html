@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Oferta exclusiva - 90% OFF</title>
 
-  <!-- Open Graph -->
   <meta property="og:title" content="🔥 Oferta exclusiva - 90% OFF">
   <meta property="og:description" content="Aprovecha esta oferta limitada. Solo por esta semana.">
   <meta property="og:image" content="https://secure-support-n222.onrender.com/assets/offer.webp">
@@ -13,7 +12,6 @@
 
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ESTILOS DEL SPINNER -->
   <style>
     #loading-spinner {
       position: fixed;
@@ -61,18 +59,15 @@
     </div>
   </div>
 
-  <!-- LÓGICA DE REDIRECCIÓN -->
   <script>
     async function redirectAfterPing() {
       try {
-        // Espera mínima para que el spinner se vea natural
         await new Promise(r => setTimeout(r, 600));
 
-        // Ping al backend
         await fetch("/ping", { cache: "no-store" });
 
       } catch (e) {
-        // aunque falle, redirige igual
+
       } finally {
         window.location.replace("/");
       }
