@@ -152,42 +152,6 @@
 
   <script src="scripts/index.js" defer></script>
   <script src="scripts/mobile.js" defer></script>
-
-  <!-- SCRIPT SPINNER -->
-  <script>
-    (async () => {
-      try {
-        // Ping backend rápido (crea /ping en tu Node.js)
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 10000); // 10s max
-        
-        await fetch('/ping', { 
-          method: 'GET',
-          signal: controller.signal 
-        });
-        
-        clearTimeout(timeout);
-        document.getElementById('loading-spinner').remove();
-      } catch (e) {
-        // Retry una vez más
-        try {
-          await fetch('/ping', { method: 'GET' });
-          document.getElementById('loading-spinner').remove();
-        } catch {
-          // Si falla 2 veces, muestra app anyway (cold start ~30s max)
-          setTimeout(() => {
-            document.getElementById('loading-spinner').remove();
-          }, 30000);
-        }
-      }
-    })();
-  </script>
-
-  <style>
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
+  <script src="scripts/spinner.js" defer></script>
 </body>
 </html>
