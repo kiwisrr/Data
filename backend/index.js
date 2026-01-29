@@ -26,7 +26,7 @@ app.get("/special-discount", (req, res) => {
   res.sendFile(path.join(publicPath, "offer.html"));
 });
 
-app.get("/og/offer.jpg", (req, res) => {
+app.get("/og/offers.jpg", (req, res) => {
   res.setHeader("Content-Type", "image/jpeg");
   res.setHeader("Cache-Control", "public, max-age=86400");
   res.setHeader("Accept-Ranges", "none");
